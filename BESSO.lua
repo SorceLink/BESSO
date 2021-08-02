@@ -1872,7 +1872,7 @@ tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,chat)
 if not database:sismember(bot_id..'Chek:Groups',msg.chat_id_) then
 send(msg.chat_id_, msg.id_,'-›  المجموعه تم تعطيلها من قبل يالطيب')
 else
-sendText(msg.chat_id_,'\n-› من ← ['..string.sub(result.first_name_,0, 70)..'](tg://user?id='..result.id_..')\n-›   تم تعطيل المجموعه {'..chat.title_..'}',msg.id_/2097152/0.5,'md')
+sendText(msg.chat_id_,'\n-› من ← ['..string.sub(result.first_name_,0, 70)..'](tg://user?id='..result.id_..')\n-›    عطلت المجموعه {'..chat.title_..'}',msg.id_/2097152/0.5,'md')
 database:srem(bot_id..'Chek:Groups',msg.chat_id_)  
 local Name = '['..result.first_name_..'](tg://user?id='..result.id_..')'
 local NameChat = chat.title_
@@ -1919,7 +1919,7 @@ end
 if database:sismember(bot_id..'Chek:Groups',msg.chat_id_) then
 send(msg.chat_id_, msg.id_,'-›  لمجموعة مفعله من قبل يالطيب')
 else
-sendText(msg.chat_id_,'\n-› من ← ['..string.sub(result.first_name_,0, 70)..'](tg://user?id='..result.id_..')\n-›   تم تفعيل المجموعه {'..chat.title_..'}',msg.id_/2097152/0.5,'md')
+sendText(msg.chat_id_,'\n-› من ← ['..string.sub(result.first_name_,0, 70)..'](tg://user?id='..result.id_..')\n-›    فعلت المجموعه {'..chat.title_..'}',msg.id_/2097152/0.5,'md')
 database:sadd(bot_id..'Chek:Groups',msg.chat_id_)  
 database:sadd(bot_id..'Basic:Constructor'..msg.chat_id_, msg.sender_user_id_)
 local Name = '['..result.first_name_..'](tg://user?id='..result.id_..')'
