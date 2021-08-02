@@ -3730,8 +3730,8 @@ return false
 end
 database:sadd(bot_id..'Mod:User'..msg.chat_id_, result.sender_user_id_)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
-usertext = '\n-› العضو » ['..data.first_name_..'](t.me/'..(data.username_ or 'DEVBESSO')..')'
-status  = '\n-› تم ترقيته ادمن'
+usertext = '\n-› الحلو » ['..data.first_name_..'](t.me/'..(data.username_ or 'DEVBESSO')..')'
+status  = '\n-› رفعته صار ادمن'
 send(msg.chat_id_, msg.id_, usertext..status)
 end,nil)
 end
@@ -3760,8 +3760,8 @@ send(msg.chat_id_,msg.id_,"-›  عذرا عزيزي المستخدم هاذا �
 return false 
 end      
 database:sadd(bot_id..'Mod:User'..msg.chat_id_, result.id_)
-usertext = '\n-› العضو » ['..result.title_..'](t.me/'..(username or 'DEVBESSO')..')'
-status  = '\n-› تم ترقيته ادمن'
+usertext = '\n-› الحلو » ['..result.title_..'](t.me/'..(username or 'DEVBESSO')..')'
+status  = '\n-› رفعته صار ادمن'
 texts = usertext..status
 else
 texts = '-› لا يوجد حساب بهاذا المعرف'
@@ -3789,8 +3789,8 @@ end
 database:sadd(bot_id..'Mod:User'..msg.chat_id_, userid)
 tdcli_function ({ID = "GetUser",user_id_ = userid},function(arg,data) 
 if data.first_name_ then
-usertext = '\n-› العضو » ['..data.first_name_..'](t.me/'..(data.username_ or 'DEVBESSO')..')'
-status  = '\n-› تم ترقيته ادمن'
+usertext = '\n-› الحلو » ['..data.first_name_..'](t.me/'..(data.username_ or 'DEVBESSO')..')'
+status  = '\n-› رفعته صار ادمن'
 send(msg.chat_id_, msg.id_, usertext..status)
 else
 usertext = '\n-› العضو » '..userid..''
@@ -3812,8 +3812,8 @@ end
 function start_function(extra, result, success)
 database:srem(bot_id..'Mod:User'..msg.chat_id_, result.sender_user_id_)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
-usertext = '\n-› العضو » ['..data.first_name_..'](t.me/'..(data.username_ or 'DEVBESSO')..')'
-status  = '\n-› تم تنزيله من الادمنيه'
+usertext = '\n » ['..data.first_name_..'](t.me/'..(data.username_ or 'DEVBESSO')..')'
+status  = '\n-› نزلته من الادمن'
 send(msg.chat_id_, msg.id_, usertext..status)
 end,nil)
 end
@@ -3834,8 +3834,8 @@ end
 function start_function(extra, result, success)
 if result.id_ then
 database:srem(bot_id..'Mod:User'..msg.chat_id_, result.id_)
-usertext = '\n-› العضو » ['..result.title_..'](t.me/'..(username or 'DEVBESSO')..')'
-status  = '\n-› تم تنزيله من الادمنيه'
+usertext = '\n» ['..result.title_..'](t.me/'..(username or 'DEVBESSO')..')'
+status  = '\n-› نزلته من الادمن'
 texts = usertext..status
 else
 texts = '-›  لا يوجد حساب بهاذا المعرف'
@@ -3859,12 +3859,12 @@ end
 database:srem(bot_id..'Mod:User'..msg.chat_id_, userid)
 tdcli_function ({ID = "GetUser",user_id_ = userid},function(arg,data) 
 if data.first_name_ then
-usertext = '\n-› العضو » ['..data.first_name_..'](t.me/'..(data.username_ or 'DEVBESSO')..')'
-status  = '\n-› تم تنزيله من الادمنيه'
+usertext = '\n» ['..data.first_name_..'](t.me/'..(data.username_ or 'DEVBESSO')..')'
+status  = '\n-› نزلته من الادمن'
 send(msg.chat_id_, msg.id_, usertext..status)
 else
-usertext = '\n-› العضو » '..userid..''
-status  = '\n-› تم تنزيله من الادمنيه'
+usertext = '\n» '..userid..''
+status  = '\n-› نزلته من الادمن'
 send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 return false
