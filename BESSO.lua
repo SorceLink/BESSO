@@ -1091,12 +1091,12 @@ local userid = text:match("^حذف مطور (%d+)$")
 database:srem(bot_id..'Sudo:User', userid)
 tdcli_function ({ID = "GetUser",user_id_ = userid},function(arg,data) 
 if data.first_name_ then
-usertext = '\n-› العضو » ['..data.first_name_..'](t.me/'..(data.username_ or 'SourceDilar ')..')'
-status  = '\n-›  تم تنزيله من المطورين'
+usertext = '\n» ['..data.first_name_..'](t.me/'..(data.username_ or 'SourceDilar ')..')'
+status  = '\n-›   نزلته من المطورين'
 send(msg.chat_id_, msg.id_, usertext..status)
 else
-usertext = '\n-› العضو » '..userid..''
-status  = '\n-›  تم تنزيله من المطورين'
+usertext = '\n» '..userid..''
+status  = '\n-›   نزلته من المطورين'
 send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 return false 
@@ -5460,7 +5460,7 @@ send(msg.chat_id_, msg.id_,'-›  البوت ليس ادمن يرجى ترقيت
 return false  
 end
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
-usertext = '\n-› العضو » ['..data.first_name_..'](t.me/'..(data.username_ or 'SourceDilar ')..')'
+usertext = '\n» ['..data.first_name_..'](t.me/'..(data.username_ or 'SourceDilar ')..')'
 status  = '\n-›  ابشر نزلت ادمن من الكروب'
 send(msg.chat_id_, msg.id_, usertext..status)
 https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..result.sender_user_id_.."&can_change_info=false&can_delete_messages=false&can_invite_users=false&can_restrict_members=false&can_pin_messages=false&can_promote_members=false")
@@ -5941,7 +5941,7 @@ local text =
 ' }\n'..'-›  الدردشه ← { '..lock_text..
 ' }\n'..'-›  الفيديو ← { '..lock_ved..
 ' }\n'..'-›  الصور ← { '..lock_photo..
-' }\n~~~~~~~~~~~~~~~~~~~~'..
+' }\n•••••••••••••••••••'..
 '\n'..'-›  الصوت ← { '..lock_muse..
 ' }\n'..'-›  الملصقات ← { '..lock_ste..
 ' }\n'..'-›  الجهات ← { '..lock_phon..
@@ -5952,7 +5952,7 @@ local text =
 ' }\n'..'-›  التكرار ← { '..flood..
 ' }\n'..'-›  الترحيب ← { '..welcome..
 ' }\n'..'-›  عدد التكرار ← { '..NUM_MSG_MAX..
-' }\n~~~~~~~~~~~~~~~~~~~~'..
+' }\n•••••••••••••••••••'..
 '\n'..'-›  امر صيح ← { '..kickme..
 ' }\n'..'-›  امر اطردني ← { '..sehuser..
 ' }\n'..'-›  امر منو ضافني ← { '..addme..
@@ -6344,7 +6344,7 @@ end
 
 if database:get(bot_id.."CHENG:ID"..msg.chat_id_..""..msg.sender_user_id_) then 
 if text == 'الغاء' then 
-send(msg.chat_id_, msg.id_,"-›  تم الغاء تعين الايدي") 
+send(msg.chat_id_, msg.id_,"-›   من عيوني الغيته") 
 database:del(bot_id.."CHENG:ID"..msg.chat_id_..""..msg.sender_user_id_) 
 return false  
 end 
@@ -6834,13 +6834,13 @@ end
 if text == ""..(database:get(bot_id..'Name:Bot') or 'ديلار').."" then  
 Namebot = (database:get(bot_id..'Name:Bot') or 'ديلار')
 local BESSO_Msg = {
-'اسمي مينو كول💘؟',
-'دا اشرب جاي مفارغلك',
-'لابسك لتلح',
-'كول حبيبي ؟ اني '..Namebot..'',
-'ها حبي وياك مكتب ئلسيد .',
-'مشغول حالياً 🌚🌸',
-'عمري فداك '..Namebot..' كول حب'
+'اسمي طوكيو ؟',
+'لبيه',
+'هلا والله',
+'الله ياخذ '..Namebot..'',
+'نعم .',
+'كلم مطوري عيوني',
+'شتريد '..Namebot..' عيون'
 }
 send(msg.chat_id_, msg.id_,'['..BESSO_Msg[math.random(#BESSO_Msg)]..']') 
 return false
