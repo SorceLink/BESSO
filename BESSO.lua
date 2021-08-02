@@ -2009,7 +2009,6 @@ if text == 'السورس' or text == 'يورس' or text == 'يا سورس' then
 Text = [[
 Cha [Dilar Source](t.me/SourceDilar)
 Dev [Armando](t.me/IIIZIIII)
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -3146,11 +3145,11 @@ if data.members_[i].status_.ID == "ChatMemberStatusCreator" then
 owner_id = admins[i].user_id_
 tdcli_function ({ID = "GetUser",user_id_ = owner_id},function(arg,b) 
 if b.first_name_ == false then
-send(msg.chat_id_, msg.id_,"🗑┋ حساب المالك محذوف")
+send(msg.chat_id_, msg.id_,"-› حساب المالك محذوف")
 return false  
 end
 local UserName = (b.username_ or "besso")
-send(msg.chat_id_, msg.id_,"👮‍♂️┋المالك : ["..b.first_name_.."](T.me/"..UserName..")")  
+send(msg.chat_id_, msg.id_,"-›المالك ["..b.first_name_.."](T.me/"..UserName..")")  
 end,nil)   
 end
 end
@@ -3170,7 +3169,7 @@ send(msg.chat_id_, msg.id_,"🗑┋حساب المالك محذوف")
 return false  
 end
 local UserName = (b.username_ or "Spirta")
-send(msg.chat_id_, msg.id_,"👮‍♂️┋تم ترقية مالك المجموعه : ["..b.first_name_.."](T.me/"..UserName..")")  
+send(msg.chat_id_, msg.id_,"-›تم ترقية مالك المجموعه  ["..b.first_name_.."](T.me/"..UserName..")")  
 database:sadd(bot_id.."Basic:Constructor"..msg.chat_id_,b.id_)
 end,nil)   
 end,nil)   
@@ -3672,9 +3671,9 @@ database:srem(bot_id.."Mod:User"..msg.chat_id_, admins[i].user_id_)
 end
 end
 if num2 == 0 then
-send(msg.chat_id_, msg.id_,"📮¦ لا توجد ادمنية ليتم رفعهم") 
+send(msg.chat_id_, msg.id_,"-› لا توجد ادمنية ليتم رفعهم") 
 else
-send(msg.chat_id_, msg.id_,"👷🏻‍♂️¦ تمت ترقية { "..num2.." } من ادمنية المجموعه") 
+send(msg.chat_id_, msg.id_,"-› تمت ترقية { "..num2.." } من ادمنية المجموعه") 
 end
 end,nil)   
 end
@@ -3951,7 +3950,7 @@ end
 if text and text:match("^طرد (%d+)$") and Mod(msg) then 
 local userid = text:match("^طرد (%d+)$") 
 if database:get(bot_id..'Lock:kick'..msg.chat_id_) and not Constructor(msg) then
-send(msg.chat_id_, msg.id_,'🏅 تم تعطيل الطرد من قبل المالكين') 
+send(msg.chat_id_, msg.id_,'-› تم تعطيل الطرد من قبل المالكين') 
 return false
 end
 if tonumber(userid) == tonumber(bot_id) then  
@@ -4761,7 +4760,7 @@ end
 ------------------------------------------------------------------------
 if text == 'مسح المحظورين' and Mod(msg) then
 database:del(bot_id..'Ban:User'..msg.chat_id_)
-send(msg.chat_id_, msg.id_, '\n🚷| تم مسح المحظورين')
+send(msg.chat_id_, msg.id_, '\n-› تم مسح المحظورين')
 end
 if text == ("المحظورين") and Manager(msg) then
 local list = database:smembers(bot_id..'Ban:User'..msg.chat_id_)
@@ -4785,12 +4784,12 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'-›  عذراً عليك الاشتراك في القناة \n 📌| اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'-›  عذراً عليك الاشتراك في القناة \n -› اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 if database:get(bot_id..'Lock:kick'..msg.chat_id_) and not Constructor(msg) then
-send(msg.chat_id_, msg.id_,'⚠️| تم تعطيل الحظر من قبل المالكين') 
+send(msg.chat_id_, msg.id_,'-› تم تعطيل الحظر من قبل المالكين') 
 return false
 end
 function start_function(extra, result, success)
@@ -4827,7 +4826,7 @@ end
 if text and text:match("^حظر @(.*)$") and Mod(msg) then
 local username = text:match("^حظر @(.*)$")
 if database:get(bot_id..'Lock:kick'..msg.chat_id_) and not Constructor(msg) then
-send(msg.chat_id_, msg.id_,'🎗️|  تم تعطيل الحظر من قبل المالكين') 
+send(msg.chat_id_, msg.id_,'-›  تم تعطيل الحظر من قبل المالكين') 
 return false
 end
 function start_function(extra, result, success)
@@ -4845,7 +4844,7 @@ send(msg.chat_id_, msg.id_,'-›  ليس لدي صلاحية حظر المستخ
 return false  
 end
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,'🚸| البوت ليس ادمن يرجى ترقيتي !') 
+send(msg.chat_id_, msg.id_,'-› البوت ليس ادمن يرجى ترقيتي !') 
 return false  
 end
 database:sadd(bot_id..'Ban:User'..msg.chat_id_, result.id_)
@@ -4892,7 +4891,7 @@ send(msg.chat_id_, msg.id_,'-›  ليس لدي صلاحية حظر المستخ
 return false  
 end
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,'🚸| البوت ليس ادمن يرجى ترقيتي !') 
+send(msg.chat_id_, msg.id_,'-› البوت ليس ادمن يرجى ترقيتي !') 
 return false  
 end
 database:sadd(bot_id..'Ban:User'..msg.chat_id_, userid)
