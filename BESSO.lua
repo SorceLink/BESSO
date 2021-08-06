@@ -657,7 +657,7 @@ if text == '/start' then
 if SudoBot(msg) then
 local bl = '-›  اهلا بك عيوني المطور في اوامر الكيبورد'
 local keyboard = {
-{'الاحصائيات'},
+{'•الاحصائيات'},
 {'ضع اسم للبوت ©','جلب نسخه احتياطيه 📂'},
 {'تفعيل التواصل 💌','تعطيل التواصل 🗃'},
 {'اذاعه عام 📢','اذاعه خاص 👤'},
@@ -865,7 +865,7 @@ send(msg.chat_id_, msg.id_,"-›  اهلا عزيزي المطور \n-›  ار�
 end
 return false  
 end
-if text == 'الاحصائيات' and SudoBot(msg) then 
+if text == '•الاحصائيات' and SudoBot(msg) then 
 local Groups = database:scard(bot_id..'Chek:Groups')  
 local Users = database:scard(bot_id..'User_Bot')  
 Text = '*-›  احصائيات البوت الكامله \n'..'-›  عدد المجموعات »{'..Groups..'}'..'\n-› عدد المشتركين »{'..Users..'}*'
@@ -6834,7 +6834,7 @@ end
 if text == ""..(database:get(bot_id..'Name:Bot') or 'ديلار').."" then  
 Namebot = (database:get(bot_id..'Name:Bot') or 'ديلار')
 local BESSO_Msg = {
-'اسمي طوكيو ؟',
+'  ؟',
 'لبيه',
 'هلا والله',
 'الله ياخذ '..Namebot..'',
@@ -6974,17 +6974,17 @@ send(msg.chat_id_, msg.id_,"-›  لا تستطيع تنزيل المطور ال
 return false 
 end
 if database:sismember(bot_id..'Sudo:User',result.sender_user_id_) then
-dev = 'المطور 👨🏻‍🚒 ،' else dev = '' end
+dev = 'المطور  ،' else dev = '' end
 if database:sismember(bot_id..'Basic:Constructor'..msg.chat_id_, result.sender_user_id_) then
-crr = 'مالك اساسي 🧑🏻‍🚀 ،' else crr = '' end
+crr = 'مالك اساسي  ،' else crr = '' end
 if database:sismember(bot_id..'Constructor'..msg.chat_id_, result.sender_user_id_) then
-cr = 'مالك 👨🏻‍💼 ،' else cr = '' end
+cr = 'مالك  ،' else cr = '' end
 if database:sismember(bot_id..'Manager'..msg.chat_id_, result.sender_user_id_) then
-own = 'نائب مدير 👮🏻‍♂️ ،' else own = '' end
+own = 'نائب مدير  ،' else own = '' end
 if database:sismember(bot_id..'Mod:User'..msg.chat_id_, result.sender_user_id_) then
-mod = 'ادمن👷🏻‍♂️ ،' else mod = '' end
+mod = 'ادمن ،' else mod = '' end
 if database:sismember(bot_id..'Special:User'..msg.chat_id_, result.sender_user_id_) then
-vip = 'مميز 🕵🏻‍♀️ ،' else vip = ''
+vip = 'مميز  ،' else vip = ''
 end
 if Can_or_NotCan(result.sender_user_id_,msg.chat_id_) ~= false then
 send(msg.chat_id_, msg.id_,"\n-›  تم تنزيل الشخص من الرتب التاليه \n-›  { "..dev..''..crr..''..cr..''..own..''..mod..''..vip.." } \n")
@@ -7909,12 +7909,11 @@ local photps = (taha.total_count_ or 0)
 local interaction = Total_Msg(Msguser)
 local rtpg = rtpa
 local tahaa = {
-"بيك كورونا🦠",
-"صورتك تعبر عن سفالتك😡",
-"لاخلقه ولا اخلاق🌚",
-"ملاك وناسيك بكروبنا💋",
-"شهل الگيمر 💋💖",
-"قله ذوق🤢",
+"بيك كورونا",
+"صورتك تعبر عن سفالتك",
+"لاخلقه ولا اخلاق",
+"ملاك وناسيك بكروبنا",
+"شهل الگيمر "
 "ممكن سيلفي🤳🏻",
 "ممكن نجي خطابه❤️🤤",
 "نوتلا🙊❤️",
